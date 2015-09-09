@@ -41,7 +41,7 @@ app: &app_base
     - elasticsearch:redis.myapp.example.com
   environment: &app_environment
     # PostgreSQL Database:
-    DATABASE_URL: postgres://postgres:my_app@postgres.myapp.example.com:5432/my_app_development?pool=25&encoding=unicode
+    DATABASE_URL: postgres://postgres:3x4mpl34pp@postgres.myapp.example.com:5432/my_app_development?pool=25&encoding=unicode&schema_search_path=public
 
     # Redis Database:
     REDIS_URL: redis://redis.myapp.example.com:6379

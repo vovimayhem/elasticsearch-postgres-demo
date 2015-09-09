@@ -26,7 +26,7 @@ fi
 # 3: Call 'bundler' in any of the app containers (web, worker, test).
 # It will also start the dependency containers (postgres, redis), which
 # we'll need them already running for the next step:
-docker-compose run --rm web bundle
+docker-compose run --rm app bundle
 
 # Wait 20 seconds for the postgres container to finish initializing:
 read -t 20 -p "Waiting 20 seconds for the postgres container to finish initializing (Hit ENTER to continue right away)"
@@ -34,7 +34,7 @@ echo " - Continuing with app database setup:"
 
 # 4: Call 'rake db:setup' to initialize the app database with the needed tables
 # & data:
-docker-compose run --rm web rake db:setup
+docker-compose run --rm app rake db:setup
 
 # 5: Stop all the running containers:
 docker-compose stop
